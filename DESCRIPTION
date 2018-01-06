@@ -2,9 +2,10 @@ Package: SetListR
 Type: Package
 Title: Setlist FM API Wrapper
 Version: 0.1.0
-Author: Scott Bell
+Author@R: person("Scott", "Bell", email = "me@scottJamesbell.com", 
+  role = c("aut", "cre"))
 Description: An API wrapper for the setlist fm API. Useful for analysis of artists, music venues and setlists.
-License: What license is it under?
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Depends: httr
