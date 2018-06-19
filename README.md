@@ -5,6 +5,8 @@ Overview
 
 A wrapper for the SetList FM API. To enable easier and quicker analysis of music and artists in R.
 
+  [![Travis build status](https://travis-ci.org/fusionet24/SetListR.svg?branch=master)](https://travis-ci.org/fusionet24/SetListR)
+
 Installation
 ------------
 
