@@ -1,7 +1,7 @@
 Package: SetListR
 Type: Package
 Title: Setlist FM API Wrapper
-Version: 0.1.0
+Version: 0.1.5
 Author@R: person("Scott", "Bell", email = "me@scottJamesbell.com", 
   role = c("aut", "cre"))
 Description: An API wrapper for the setlist fm API. Useful for analysis of artists, music venues and setlists.

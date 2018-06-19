@@ -42,3 +42,9 @@ library(SetListR)
 searchSetLists(API_KEY = 'KEY', mbid = '0bfba3d3-6a04-4779-bb0a-df07df5b0558', countryCode = 'USA')
 searchSetLists(API_KEY = 'KEY', mbid = '0bfba3d3-6a04-4779-bb0a-df07df5b0558', cityName ='Lincoln') # Replace KEY with your API KEY!
 ```
+
+You can search specfic cities.
+``` r
+library(SetListR)
+searchCities(API_KEY = "KEY",cityName = "Lincoln", countryName = "UK") # Replace KEY with your API KEY!
+```
