@@ -22,6 +22,9 @@ searchArtists(API_KEY, mbid = NULL, artistName = NULL, page = 1,
 
 \item{ResponseType}{Whether you want JSON or XML responses (currently it is just a preprocessed list)}
 }
+\value{
+a list of artists matching your criteria
+}
 \description{
 Search Artists
 }
