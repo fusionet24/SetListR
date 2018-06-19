@@ -20,7 +20,7 @@ You will also need an API key which can be [generated](https://www.setlist.fm/se
 Usage
 -----
 
-There are currently 3 functions that provide access to different endpoints from the Setlist FM API:
+There are currently 5 functions that provide access to different endpoints from the Setlist FM API:
 - getArtist()
 - getArtistSetLists()
 - searchArtists()
