@@ -1,7 +1,7 @@
 Type: Package
 Package: SetListR
 Title: Setlist FM API Wrapper
-Version: 0.1.5
+Version: 0.1.6
 Description: An API wrapper for the setlist fm API. Useful for analysis of artists, music venues and setlists.
 License: MIT
 BugReports: https://github.com/fusionet24/SetListR/issues
