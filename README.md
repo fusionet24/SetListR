@@ -22,6 +22,7 @@ There are currently 3 functions that provide access to different endpoints from 
 - getArtist()
 - getArtistSetLists()
 - searchArtists()
+- searchSetLists()
 
 The can be used in a variety of ways and documentation is included within the package. A quick example is:
 ``` r
@@ -34,4 +35,10 @@ The MBID is a unique id assigned to every artist by [Music Brains](https://music
 ``` r
 library(SetListR)
 searchArtists(API_KEY = 'KEY', artistName = 'Frank Turner') # Replace KEY with your API KEY!
+```
+You can search specfic setlists by Artist,location etc.
+``` r
+library(SetListR)
+searchSetLists(API_KEY = 'KEY', mbid = '0bfba3d3-6a04-4779-bb0a-df07df5b0558', countryCode = 'USA')
+searchSetLists(API_KEY = 'KEY', mbid = '0bfba3d3-6a04-4779-bb0a-df07df5b0558', cityName ='Lincoln') # Replace KEY with your API KEY!
 ```
