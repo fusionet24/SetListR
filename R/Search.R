@@ -73,3 +73,43 @@ searchSetLists <- function(API_KEY, mbid= NULL,artistName = NULL,cityName = NULL
 
 
 }
+#' Search Citiies
+#'
+#' @param API_KEY Your Setlist FM API Key
+#' @param cityName The CityName
+#' @param cityId The City GeoID (https://www.census.gov/geo/reference/geoidentifiers.html)
+#' @param countryName country name
+#' @param state state the city lies in
+#' @param stateCode state code the city lies in
+#' @param page the page you want returning of the searchg results
+#' @param sort How to sort the pages
+#' @param Addtional_Headers Any addtional headers accepted by the api. Such as Language
+#' @param ResponseType Whether you want JSON or XML responses (currently it is just a preprocessed list)
+#'
+#' @return a list of setlists matching your criteria
+#' @export
+#'
+#' @examples
+#'searchCities(API_KEY = "KEY",cityName = "Lincoln", countryName = "UK")
+searchCities <- function(API_KEY,cityName = NULL, cityId = NULL,countryName = NULL,state = NULL,stateCode = NULL,page = 1, Addtional_Headers = NULL, ResponseType= NULL)
+{
+
+  Request_String <- paste0("cities?","&p=",page)
+  if(!is.null(state)) Request_String <- paste0(Request_String, "&state=", URLencode(state))
+  if(!is.null(cityName)) Request_String <- paste0(Request_String, "&cityName=", URLencode(cityName))
+  if(!is.null(cityId)) Request_String <- paste0(Request_String, "&cityId=", URLencode(cityId))
+  if(!is.null(stateCode)) Request_String <- paste0(Request_String, "&stateCode=", URLencode(stateCode))
+  if(!is.null(countryName)) Request_String <- paste0(Request_String, "&country=", URLencode(countryName))
+  if (is.null(ResponseType)) {
+
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search",Query_String = Request_String)
+  }
+  else
+  {
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search",Query_String = Request_String,Content_Type = ResponseType)
+
+  }
+  res
+
+
+}
