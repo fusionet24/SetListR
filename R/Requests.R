@@ -1,3 +1,14 @@
+#' BuildRequests
+#'
+#' @param APIKEY
+#' @param Endpoint
+#' @param Query_String
+#' @param AddtionalHeaders
+#' @param Content_Type
+#'
+#' @return
+#'
+#' @examples
   BuildRequest <- function(APIKEY, Endpoint = "artist", Query_String, AddtionalHeaders=NULL, Content_Type = "application/json") {
     if(missing(APIKEY)){
       stop("API KEY is missing")
