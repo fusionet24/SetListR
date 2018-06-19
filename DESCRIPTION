@@ -1,13 +1,16 @@
-Package: SetListR
 Type: Package
+Package: SetListR
 Title: Setlist FM API Wrapper
 Version: 0.1.5
-Author@R: person("Scott", "Bell", email = "me@scottJamesbell.com", 
-  role = c("aut", "cre"))
 Description: An API wrapper for the setlist fm API. Useful for analysis of artists, music venues and setlists.
 License: MIT
+BugReports: https://github.com/fusionet24/SetListR/issues
+Depends: 
+    httr
+Suggests: 
+    testthat
+Author@R: person("Scott", "Bell", email = "me@scottJamesbell.com", 
+  role = c("aut", "cre"))
 Encoding: UTF-8
 LazyData: true
-Depends: httr
-BugReports: https://github.com/fusionet24/SetListR/issues
 RoxygenNote: 6.0.1

@@ -23,6 +23,7 @@ There are currently 3 functions that provide access to different endpoints from 
 - getArtistSetLists()
 - searchArtists()
 - searchSetLists()
+- searchCities()
 
 The can be used in a variety of ways and documentation is included within the package. A quick example is:
 ``` r
