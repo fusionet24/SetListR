@@ -13,14 +13,16 @@
 #' SetListR::getArtistSetLists(API_KEY = "KEY",mbid = '0bfba3d3-6a04-4779-bb0a-df07df5b0558',page = 12, ResponseType = 'json')
 getArtistSetLists <- function(API_KEY,mbid,page = 1, Addtional_Headers = NULL, ResponseType= NULL){
 
-  Request_String <- paste0(mbid,"/setlists?p=",page)
+  request_Query <- list(p = page,
+                        artistMbid = mbid
+  )
   if (is.null(ResponseType)) {
 
-    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "artist",Query_String = Request_String)
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "artist/setlists",Query_String = request_Query)
   }
   else
   {
-    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "artist",Query_String = Request_String,Content_Type = ResponseType)
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "artist/setlists",Query_String = request_Query,Content_Type = ResponseType)
 
   }
   res
@@ -40,14 +42,18 @@ getArtistSetLists <- function(API_KEY,mbid,page = 1, Addtional_Headers = NULL, R
 #' getArtist(API_KEY = "KEY",mbid = 'aca5718f-4f49-4439-b8f6-209db3f11757')
 #' SetListR::getArtist(API_KEY = "KEY",mbid = '0bfba3d3-6a04-4779-bb0a-df07df5b0558')
 getArtist <- function(API_KEY, mbid, Addtional_Headers = NULL, ResponseType= NULL) {
-  Request_String <- mbid
+  request_Query <- list(p = page,
+                        artistMbid = mbid
+  )
+
+  request_Query
   if (is.null(ResponseType)) {
 
-    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "artist",Query_String = Request_String)
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "artist",Query_String = request_Query)
   }
   else
   {
-    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "artist",Query_String = Request_String,Content_Type = ResponseType)
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "artist",Query_String = request_Query,Content_Type = ResponseType)
 
   }
   res

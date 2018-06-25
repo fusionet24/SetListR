@@ -115,7 +115,7 @@ searchCities <- function(API_KEY,cityName = NULL, cityId = NULL,countryName = NU
   }
   else
   {
-    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search",Query_String =request_Query,Content_Type = ResponseType)
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search/cities",Query_String =request_Query,Content_Type = ResponseType)
 
   }
   res
