@@ -15,7 +15,6 @@
 #' searchArtists(API_KEY = 'KEY', artistName = 'Frank Turner')
 #' searchArtists(API_KEY = 'KEY', mbid = '0bfba3d3-6a04-4779-bb0a-df07df5b0558')
 searchArtists <- function(API_KEY, mbid= NULL,artistName = NULL,page = 1,sort = 'sortName', Addtional_Headers = NULL, ResponseType= NULL){
-  Request_String <- paste0("?","&p=",page)
     request_Query <- list(p = page,
                           artistName = artistName,
                           artistMbid = mbid)
@@ -56,19 +55,23 @@ searchArtists <- function(API_KEY, mbid= NULL,artistName = NULL,page = 1,sort = 
 searchSetLists <- function(API_KEY, mbid= NULL,artistName = NULL,cityName = NULL, cityId = NULL,countryCode = NULL,page = 1,sort = 'sortName', Addtional_Headers = NULL, ResponseType= NULL)
 {
 
-  Request_String <- paste0("setlists?","&p=",page)
-  if(!is.null(artistName)) Request_String <- paste0(Request_String, "&artistName=", URLencode(artistName))
-  if(!is.null(cityName)) Request_String <- paste0(Request_String, "&cityName=", URLencode(cityName))
-  if(!is.null(cityId)) Request_String <- paste0(Request_String, "&cityId=", URLencode(cityId))
-  if(!is.null(countryCode)) Request_String <- paste0(Request_String, "&countryCode=", URLencode(countryCode))
-  if(!is.null(mbid)) Request_String <- paste0(Request_String, "&artistMbid=",mbid)
+
+  request_Query <- list(p = page,
+                        artistName = artistName,
+                        artistMbid = mbid,
+                        cityName= cityName,
+                        cityId = cityId,
+                        countryCode= countryCode
+
+                        )
+
   if (is.null(ResponseType)) {
 
-    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search",Query_String = Request_String)
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search/setlists",Query_String = request_Query)
   }
   else
   {
-    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search",Query_String = Request_String,Content_Type = ResponseType)
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search/setlists",Query_String = request_Query,Content_Type = ResponseType)
 
   }
   res
@@ -96,19 +99,23 @@ searchSetLists <- function(API_KEY, mbid= NULL,artistName = NULL,cityName = NULL
 searchCities <- function(API_KEY,cityName = NULL, cityId = NULL,countryName = NULL,state = NULL,stateCode = NULL,page = 1, Addtional_Headers = NULL, ResponseType= NULL)
 {
 
-  Request_String <- paste0("cities?","&p=",page)
-  if(!is.null(state)) Request_String <- paste0(Request_String, "&state=", URLencode(state))
-  if(!is.null(cityName)) Request_String <- paste0(Request_String, "&cityName=", URLencode(cityName))
-  if(!is.null(cityId)) Request_String <- paste0(Request_String, "&cityId=", URLencode(cityId))
-  if(!is.null(stateCode)) Request_String <- paste0(Request_String, "&stateCode=", URLencode(stateCode))
-  if(!is.null(countryName)) Request_String <- paste0(Request_String, "&country=", URLencode(countryName))
+  request_Query <- list(p = page,
+                        cityName= cityName,
+                        cityId = cityId,
+                        countryCode= countryCode,
+                        state = state,
+                        stateCode = stateCode,
+                        countryName = countryName
+  )
+
+
   if (is.null(ResponseType)) {
 
-    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search",Query_String = Request_String)
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search/cities",Query_String =  request_Query)
   }
   else
   {
-    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search",Query_String = Request_String,Content_Type = ResponseType)
+    res <- BuildRequest(APIKEY = API_KEY, Endpoint = "search",Query_String =request_Query,Content_Type = ResponseType)
 
   }
   res
